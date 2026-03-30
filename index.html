@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Controle de Formatura - Etapa 1</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome (opcional, para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS customizado -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="mb-0">
+                            <i class="fas fa-graduation-cap"></i> 
+                            Sistema de Controle de Formatura
+                        </h3>
+                        <small>Etapa 1 - Teste de Conexão com Firebase</small>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> 
+                            Este formulário testa a conexão com o Firebase Realtime Database.
+                        </div>
+                        
+                        <!-- Formulário de teste -->
+                        <form id="testForm">
+                            <div class="mb-3">
+                                <label for="nome" class="form-label">
+                                    <i class="fas fa-user"></i> Nome:
+                                </label>
+                                <input type="text" class="form-control" id="nome" 
+                                       placeholder="Digite seu nome" required>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="mensagem" class="form-label">
+                                    <i class="fas fa-comment"></i> Mensagem:
+                                </label>
+                                <textarea class="form-control" id="mensagem" rows="3" 
+                                          placeholder="Digite uma mensagem de teste"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" id="btnEnviar">
+                                <i class="fas fa-paper-plane"></i> Testar Conexão
+                            </button>
+                            
+                            <button type="button" class="btn btn-success" id="btnCarregar">
+                                <i class="fas fa-database"></i> Carregar Dados
+                            </button>
+                            
+                            <button type="button" class="btn btn-danger" id="btnLimpar">
+                                <i class="fas fa-trash"></i> Limpar Tabela
+                            </button>
+                        </form>
+                        
+                        <hr>
+                        
+                        <!-- Tabela para exibir os dados -->
+                        <h5><i class="fas fa-table"></i> Mensagens de Teste:</h5>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover" id="tabelaMensagens">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>Nome</th>
+                                        <th>Mensagem</th>
+                                        <th>Data/Hora</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="3" class="text-center text-muted">
+                                            Nenhum dado carregado. Clique em "Carregar Dados".
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!-- Status da conexão -->
+                        <div id="statusConexao" class="alert alert-secondary mt-3">
+                            <i class="fas fa-circle-notch fa-spin"></i> 
+                            Aguardando inicialização do Firebase...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database-compat.js"></script>
+    
+    <!-- Configuração do Firebase -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Script principal -->
+    <script src="js/main.js"></script>
+</body>
+</html>
